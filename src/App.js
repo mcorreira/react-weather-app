@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="Weather App">
       Weather App
-      <footer>
+      <footer>np
         This project was coded by Megan Correira and is{" "}
         <a
           href="https://github.com/mcorreira/react-weather-app"
