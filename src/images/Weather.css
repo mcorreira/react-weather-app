@@ -1,0 +1,101 @@
+.Weather {
+  padding: 0px 20px 20px;
+  border: 1px solid #dadde1;
+  border-radius: 5px;
+}
+
+.Weather .overview {
+  margin-bottom: 20px;
+}
+
+.Weather .weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}
+
+h3 {
+  align-content: center;
+  widows: 100%;
+}
+
+h2 {
+  padding-bottom: 30px;
+}
+
+.Weather .weather-app {
+  padding-top: 50px;
+}
+
+.Weather .weather-temperature .active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.Weather .weather-temperature .active:hover {
+  text-decoration: none;
+}
+
+.Weather .weather-forecast {
+  margin-top: 10px;
+}
+
+.Weather .weather-forecast h3 {
+  color: rgb(186, 186, 186);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 15px;
+  line-height: 15px;
+  padding-top: 7px;
+}
+
+.Weather .weather-forecast img {
+  display: inline;
+  margin: 0 auto;
+  height: 70px;
+  width: 70 px;
+}
+
+.units {
+  margin-left: 20px;
+}
+
+.Weather .weather-forecast-temperature {
+  text-align: center;
+  color: rgb(135, 135, 135);
+  font-size: 13px;
+  font-weight: 400;
+  height: auto;
+  line-height: 15px;
+  white-space: nowrap;
+}
+
+.Weather {
+  max-width: 600px;
+  margin: auto;
+}
+.Weather .weather-app-wrapper {
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  box-shadow: inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+  margin: auto;
+}
+.Weather .weather-temperature span {
+  font-size: 22px;
+  font-weight: 100;
+  line-height: 25px;
+}
+.Weather .weather-temperature strong {
+  font-size: 48px;
+  line-height: 1;
+  margin: auto;
+}
+.Weather .weather-temperature img {
+  margin-right: 10px;
+  margin-top: 0;
+  height: 200;
+  width: 200;
+}
