@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.css";
 
 export default function Search() {
   const [city, setCity] = useState(" ");
@@ -35,15 +36,28 @@ export default function Search() {
       <div className="container">
         <section className="jumbotron text-center">
           <h1 className="jumbotron heading">Weather Where You Are</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="search"
-              className="form-control"
-              autocomplete="off"
-              placeholder="Enter City Name:"
-              onChange={updateCity}
-            />
-            <input className="btn w-30" type="submit" value="Search" />
+          <form onSubmit={handleSubmit} className="mb-3">
+            <div className="d-flex bd-highlight mb-3 justify-content-center">
+              <input
+                type="search"
+                className="form-control"
+                autocomplete="off"
+                placeholder="Enter City Name:"
+                onChange={updateCity}
+              />
+            </div>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+              <button className="btn w-30" type="submit" value="Search">
+                Search
+              </button>
+              <button
+                className="btn w-40"
+                type="submit"
+                value="Current Location"
+              >
+                Current Location
+              </button>
+            </div>
           </form>
         </section>
       </div>
@@ -57,23 +71,7 @@ export default function Search() {
         <h6>
           Last updated: <span>{weather.date}</span>
         </h6>
-        <form className="mb-3">
-          <div className="row">
-            {/*<div className="d-flex bd-highlight mb-3 justify-content-center"></div>
-                  <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-                    <button className="btn w-30" type="submit">
-                    Search
-                  </button>
-                  <button
-                    className="btn w-40"
-                    type="Submit"
-                    
-                  >
-                    Current Location
-    </button> 
-                  </div>*/}
-          </div>
-        </form>
+
         <div className="weather-app-wrapper">
           <div className="overview">
             <h2>{city}</h2>
