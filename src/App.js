@@ -3,7 +3,7 @@ import React from "react";
 import Weather from "./Weather";
 import "./App.css";
 import WebFont from "webfontloader";
-import Sky from "./images/sky.mp4";
+import Sky from "./images/Cloud.mp4";
 
 export default function App() {
   WebFont.load({
