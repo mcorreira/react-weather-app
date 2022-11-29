@@ -1,21 +1,15 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import "bootstrap/dist/css/bootstrap.css";
-import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement);
+
+
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-    <footer>
-      <a href="https://github.com/mcorreira/react-weather-app.git">
-        Open-source code
-      </a>
-      , by Megan Correira
-    </footer>
-  </React.StrictMode>
+  </StrictMode>
 );
-
-reportWebVitals();

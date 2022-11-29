@@ -1,0 +1,19 @@
+.App {
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.App video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  /*transform: rotate(180deg);*/
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -10;
+  }
+
+.App footer {
+  font-size: 11px;
+  margin: 10px 0;
+}
