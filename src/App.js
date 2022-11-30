@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.css";
 import React from "react";
 import Weather from "./Weather";
 import "./App.css";
@@ -14,11 +13,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <video autoplay loop muted>
+      <Weather defaultCity="Tokyo" />
+      <video autoplay loop muted id="video">
         <source src={Sky} type="video/mp4" />
       </video>
       <div className="container">
-        <Weather />
         <footer>
           <a
             href="https://github.com/mcorreira/react-weather-app.git "

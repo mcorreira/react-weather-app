@@ -27,13 +27,17 @@
   margin: auto;
 }
 
+.Weather h2 {
+  font-size: 36px;
+}
+
 .Weather.weather-temperature span {
   font-size: 22px;
   font-weight: 100;
   line-height: 25px;
 }
 
-.app .weather-temperature strong {
+.Weather #temp {
   font-size: 48px;
   line-height: 1;
 }

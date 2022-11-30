@@ -4,13 +4,13 @@ import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.css";
 
 export default function Weather(props) {
-  const [city, setCity] = useState(" ");
-  const [loaded, setLoaded] = useState(false);
-  const [weather, setWeather] = useState({});
+  const [city, setCity] = useState(props.defaultCity);
+  //const [ready, setReady] = useState(false);
+  const [weather, setWeather] = useState({ ready: false });
 
   function displayWeather(response) {
-    setLoaded(true);
     setWeather({
+      ready: true,
       temperature: response.data.main.temp,
       date: "Monday 11:30",
       sky: response.data.weather[0].description,
@@ -18,18 +18,23 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       pressure: response.data.main.pressure,
+      city: response.data.name,
     });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "094780c710fa4efd669f0df8c3991927";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeather);
+    search();
   }
 
   function updateCity(event) {
     setCity(event.target.value);
+  }
+
+  function search() {
+    const apiKey = "094780c710fa4efd669f0df8c3991927";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
   }
 
   let form = (
@@ -66,7 +71,7 @@ export default function Weather(props) {
     </div>
   );
 
-  if (loaded) {
+  if (weather.ready) {
     return (
       <div className="weather-app">
         {form}
@@ -76,12 +81,12 @@ export default function Weather(props) {
 
         <div className="weather-app-wrapper">
           <div className="overview">
-            <h2>{city}</h2>
+            <h2 className="text-capitalize">{city}</h2>
             <div className="row">
               <div className="col-6">
                 <div className="d-flex flex-row weather-temperature">
                   <img src={weather.imgUrl} alt={weather.sky} />
-                  <strong>{Math.round(weather.temperature)}</strong>
+                  <strong id="temp">{Math.round(weather.temperature)}</strong>
                   <span className="units">
                     <a href="/" className="active">
                       {" "}
@@ -98,7 +103,9 @@ export default function Weather(props) {
               <div className="col-6">
                 <ul>
                   <li>
-                    <strong>Sky: {weather.sky}</strong>
+                    <strong className="text-capitalize">
+                      Sky: {weather.sky}
+                    </strong>
                     <span></span>
                   </li>
                   <li>
@@ -120,6 +127,9 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    return form;
+    search();
+
+    return "Loading...";
   }
 }
+  

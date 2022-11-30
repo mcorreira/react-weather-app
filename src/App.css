@@ -3,11 +3,11 @@
   margin: 30px auto;
 }
 
-.App video {
+#video {
   position: fixed;
   right: 0;
   bottom: 0;
-  /*transform: rotate(180deg);*/
+  transform: rotate(180deg);
   min-width: 100%;
   min-height: 100%;
   z-index: -10;
