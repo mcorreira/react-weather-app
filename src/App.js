@@ -14,7 +14,7 @@ export default function App() {
   return (
     <div className="App">
       <Weather defaultCity="Tokyo" />
-      <video autoplay loop muted id="video">
+      <video autoPlay loop muted id="video">
         <source src={Sky} type="video/mp4" />
       </video>
       <div className="container">

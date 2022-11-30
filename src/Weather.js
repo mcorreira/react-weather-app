@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -12,7 +13,7 @@ export default function Weather(props) {
     setWeather({
       ready: true,
       temperature: response.data.main.temp,
-      date: "Monday 11:30",
+      date: new Date(response.data.dt * 1000),
       sky: response.data.weather[0].description,
       imgUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       humidity: response.data.main.humidity,
@@ -71,12 +72,16 @@ export default function Weather(props) {
     </div>
   );
 
-  if (weather.ready) {
+  if (Weather.ready) {
     return (
       <div className="weather-app">
         {form}
         <h6>
-          Last updated: <span>{weather.date}</span>
+          Last updated:{" "}
+          <span>
+            <FormattedDate date={Weather.date} />
+             
+          </span>
         </h6>
 
         <div className="weather-app-wrapper">
@@ -130,6 +135,6 @@ export default function Weather(props) {
     search();
 
     return "Loading...";
-  }
+  };
 }
   
