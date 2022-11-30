@@ -7,7 +7,7 @@ import Sky from "./images/Cloud.mp4";
 export default function App() {
   WebFont.load({
     google: {
-      families: ["Droid Sans", "Chilanka"],
+      families: ["Dosis"],
     },
   });
 

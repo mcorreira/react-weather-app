@@ -33,7 +33,7 @@ export default function Weather(props) {
   }
 
   function search() {
-    const apiKey = "094780c710fa4efd669f0df8c3991927";
+    const apiKey = "c8a77112b2faf6684bb4b21a0aa778ae";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayWeather);
   }
@@ -72,15 +72,14 @@ export default function Weather(props) {
     </div>
   );
 
-  if (Weather.ready) {
+  if (weather.ready) {
     return (
       <div className="weather-app">
         {form}
         <h6>
           Last updated:{" "}
           <span>
-            <FormattedDate date={Weather.date} />
-             
+            <FormattedDate date={weather.date} />
           </span>
         </h6>
 
@@ -135,6 +134,5 @@ export default function Weather(props) {
     search();
 
     return "Loading...";
-  };
+  }
 }
-  
