@@ -1,5 +1,5 @@
 
-.Weather {
+.Weather canvas{
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   border: 1px solid #dadde1;

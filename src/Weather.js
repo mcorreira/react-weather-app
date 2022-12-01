@@ -15,7 +15,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       date: new Date(response.data.dt * 1000),
       sky: response.data.weather[0].description,
-      imgUrl: response.data.weather[0].icon,
+      icon: response.data.weather[0].icon,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       pressure: response.data.main.pressure,
@@ -40,40 +40,39 @@ export default function Weather(props) {
 
   if (weather.ready) {
     return (
-    <div className="Search font-loader">
-      <div className="container">
-        <section className="jumbotron text-center">
-          <h1 className="jumbotron heading">Weather Where You Are</h1>
-          <form onSubmit={handleSubmit} className="mb-3">
-            <div className="d-flex bd-highlight mb-3 justify-content-center">
-              <input
-                type="search"
-                className="form-control"
-                autoComplete="off"
-                placeholder="Enter City Name:"
-                autoFocus="on"
-                onChange={updateCity}
-              />
-            </div>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-center">
-              <button className="btn w-30" type="submit" value="Search">
-                Search
-              </button>
-              <button
-                className="btn w-40"
-                type="submit"
-                value="Current Location"
-              >
-                Current Location
-              </button>
-            </div>
-          </form>
-          <WeatherInfo data={weather} />
-        </section>
+      <div className="Search font-loader">
+        <div className="container">
+          <section className="jumbotron text-center">
+            <h1 className="jumbotron heading">Weather Where You Are</h1>
+            <form onSubmit={handleSubmit} className="mb-3">
+              <div className="d-flex bd-highlight mb-3 justify-content-center">
+                <input
+                  type="search"
+                  className="form-control"
+                  autoComplete="off"
+                  placeholder="Enter City Name:"
+                  autoFocus="on"
+                  onChange={updateCity}
+                />
+              </div>
+              <div className="d-grid gap-2 d-md-flex justify-content-md-center">
+                <button className="btn w-30" type="submit" value="Search">
+                  Search
+                </button>
+                <button
+                  className="btn w-40"
+                  type="submit"
+                  value="Current Location"
+                >
+                  Current Location
+                </button>
+              </div>
+            </form>
+            <WeatherInfo data={weather} />
+          </section>
+        </div>
       </div>
-    </div>
-  );
-
+    );
   } else {
     search();
 
