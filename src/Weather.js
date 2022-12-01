@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import FormattedDate from "./FormattedDate";
+//import FormattedDate from "./FormattedDate";
 import axios from "axios";
 import "./Weather.css";
-import "bootstrap/dist/css/bootstrap.css";
+//import "bootstrap/dist/css/bootstrap.css";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
-  //const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({ ready: false });
 
   function displayWeather(response) {
@@ -15,7 +15,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       date: new Date(response.data.dt * 1000),
       sky: response.data.weather[0].description,
-      imgUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      imgUrl: response.data.weather[0].icon,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
       pressure: response.data.main.pressure,
@@ -38,7 +38,8 @@ export default function Weather(props) {
     axios.get(apiUrl).then(displayWeather);
   }
 
-  let form = (
+  if (weather.ready) {
+    return (
     <div className="Search font-loader">
       <div className="container">
         <section className="jumbotron text-center">
@@ -48,9 +49,9 @@ export default function Weather(props) {
               <input
                 type="search"
                 className="form-control"
-                autocomplete="off"
+                autoComplete="off"
                 placeholder="Enter City Name:"
-                autofocus="on"
+                autoFocus="on"
                 onChange={updateCity}
               />
             </div>
@@ -67,69 +68,12 @@ export default function Weather(props) {
               </button>
             </div>
           </form>
+          <WeatherInfo data={weather} />
         </section>
       </div>
     </div>
   );
 
-  if (weather.ready) {
-    return (
-      <div className="weather-app">
-        {form}
-        <h6>
-          Last updated:{" "}
-          <span>
-            <FormattedDate date={weather.date} />
-          </span>
-        </h6>
-
-        <div className="weather-app-wrapper">
-          <div className="overview">
-            <h2 className="text-capitalize">{city}</h2>
-            <div className="row">
-              <div className="col-6">
-                <div className="d-flex flex-row weather-temperature">
-                  <img src={weather.imgUrl} alt={weather.sky} />
-                  <strong id="temp">{Math.round(weather.temperature)}</strong>
-                  <span className="units">
-                    <a href="/" className="active">
-                      {" "}
-                      °C
-                    </a>
-                    {"  "}|{" "}
-                    <a href="/" className="active">
-                      {" "}
-                      °F
-                    </a>
-                  </span>
-                </div>
-              </div>
-              <div className="col-6">
-                <ul>
-                  <li>
-                    <strong className="text-capitalize">
-                      Sky: {weather.sky}
-                    </strong>
-                    <span></span>
-                  </li>
-                  <li>
-                    <strong>Humidty: {weather.humidity}</strong> <span></span>%
-                  </li>
-                  <li>
-                    <strong>Pressure: {weather.pressure}</strong>
-                    <span> </span> kPa{" "}
-                  </li>
-                  <li>
-                    <strong>Wind: {weather.wind}</strong>
-                    <span></span> km/h
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
   } else {
     search();
 
