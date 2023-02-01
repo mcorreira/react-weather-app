@@ -16,37 +16,42 @@ export default function WeatherInfo(props) {
           </h6>
           <h2 className="text-capitalize">{props.data.city}</h2>
           <div className="row">
-            <div className="col-6">
+            <div className="col-12">
               <div className="d-flex flex-row weather-temperature">
                 <div className="float-left">
                   <WeatherIcon
                     code={props.data.icon}
                     alt={props.data.sky}
-                    size={52}
+                    size={100}
                   />
-                  <div className="flost-left">
+                  <div className="float-left">
                     <WeatherTemperature celsius={props.data.temperature} />
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="col-8">
                   <ul>
                     <li>
-                      <strong className="text-capitalize">
+                      <strong className="text-capitalize sky">
                         Sky: {props.data.sky}
                       </strong>
                       <span></span>
                     </li>
                     <li>
-                      <strong>Humidty: {props.data.humidity}</strong>{" "}
-                      <span></span>%
+                      <strong className="text-capitalize humidity">
+                        Humidty: {props.data.humidity} <span></span>%
+                      </strong>
                     </li>
                     <li>
-                      <strong>Pressure: {props.data.pressure}</strong>
-                      <span> </span> kPa{" "}
+                      <strong className="text-capitalize pressure">
+                        Pressure: {props.data.pressure}
+                        <span> </span> kPa{" "}
+                      </strong>
                     </li>
                     <li>
-                      <strong>Wind: {props.data.wind}</strong>
-                      <span></span> km/h
+                      <strong className="text-capitalize wind">
+                        Wind: {props.data.wind}
+                        <span></span> km/h{" "}
+                      </strong>
                     </li>
                   </ul>
                 </div>

@@ -11,9 +11,10 @@
   min-width: 100%;
   min-height: 100%;
   z-index: -10;
-  }
+}
 
 .App footer {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: bold;
   margin: 10px 0;
 }

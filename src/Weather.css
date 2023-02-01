@@ -1,106 +1,113 @@
-
-.Weather canvas{
+/*.Weather canvas {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  border: 1px solid #dadde1;
+  border: 100px solid #dadde1;
   padding: 26px;
   width: 100%;
   border-radius: 4px;
   color: rgb(10, 8, 12);
-}
+} */
 
 .font-loader {
   font-family: 'dosis', sans-serif, arial;
 }
 
 
-.Weather .weather-app {
+/*.Weather .weather-app {
   max-width: 600px;
   margin: auto;
-}
+}*/
 
-.Weather .weather-app-wrapper {
+/*.Weather .weather-app-wrapper {
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
   box-shadow: inset -10px -10px 15px rgb(255 255 255 / 50%), inset 10px 10px 15px rgb(70 70 70 / 12%);
   margin: auto;
-}
+}*/
 
-.Weather h2 {
-  font-size: 36px;
-}
+/*.Weather h2 {
+  font-size: 100px;
+}*/
 
-.Weather.weather-temperature span {
+.WeatherTemperature span {
   font-size: 22px;
-  font-weight: 100;
+  font-weight: 400;
   line-height: 25px;
 }
 
-.Weather #temp {
-  font-size: 48px;
-  line-height: 1;
+.WeatherTemperature a {
+  text-decoration: none;
 }
 
-.Weather-temperature img {
+/*.Weather #temp {
+  font-size: 48px;
+  line-height: 1;
+}*/
+
+/*.Weather-temperature img {
   margin-right: 10px;
   margin-top: -25px;
   height: 100;
   width: 100;
-}
+}*/
 
-.celsius.link {
+/*.celsius.link {
   text-decoration: none;
-}
+}*/
 
-.units {
+/*.units {
   position: relative;
-  font-size: 12px;
-}
+  font-size: 20px;
+}*/
 
-.units a {
+/*.units a {
   text-decoration: none;
   color: indigo;
-}
+}*/
 
-#open {
+/*#open {
   color: rgb(10, 8, 12);
-}
+}*/
 
-.small {
+/*.small {
   max-width: 600px;
   margin: 10;
   padding: 20px;
-}
+}*/
 
-.Weather h1 {
+.WeatherInfo h1 {
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 80px;
 }
 
-.Weather h2 {
+.WeatherInfo h2 {
   text-align: center;
-  font-size: 42px;
+  font-size: 75px;
+  padding: -50px;
 }
 
-.Weather h6 {
+.WeatherInfo h6 {
   text-align: center;
   padding-bottom: 20px;
+  font-size: 15px;
 }
 
-.Weather ul {
-  margin: 0;
-  padding: 0;
-  text-align: right;
-}
-
-.Weather li {
+.WeatherInfo ul {
+  margin: 10;
+  padding: 10;
+  text-align: center;
   list-style: none;
+}
+
+.WeatherInfo li {
   font-size: 22px;
-  font-weight: 100;
-  line-height: 25px;
+  font-weight: bold;
+  line-height: 40px;
   padding-bottom: 5px;
+  padding-top: 5px;
   text-transform: capitalize;
 }
 
@@ -111,7 +118,7 @@
 
 .Weather button {
   height: 50px;
-  border: 1px solid indigo;
+  border: 10px solid indigo;
   border-radius: 5px;
   max-width: 20;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
